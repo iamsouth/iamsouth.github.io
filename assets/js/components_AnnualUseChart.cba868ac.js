@@ -1,0 +1,14 @@
+import{u as c,j as d}from"./components_AgeRatioChart.91c13277.js";const m="_tooTip_hd0wz_1",h="_month_hd0wz_9",p="_list_hd0wz_16",u="_item_hd0wz_21",b="_dot_hd0wz_27",f="_name_hd0wz_33",g="_value_hd0wz_34",a={tooTip:m,month:h,list:p,item:u,dot:b,name:f,value:g},_=()=>{const r=["rgba(254, 219, 101,0.1)","rgba(0, 122, 254,0.1)","rgba(255, 75, 122, 0.1)"],l=[{label:new Date().getFullYear()-2+"年",value:["184","90","120","0","30","100","80","40","20","510","350","180"]},{label:new Date().getFullYear()-1+"年",value:["118","509","366","162","380","123","321","158","352","474","154","22"]},{label:new Date().getFullYear()+"年",value:["548","259","113","90","69","512","23","49","28","420","313","156"]}],e={data:l,unit:l.map(o=>o.label),columns:["1","2","3","4","5","6","7","8","9","10","11","12"],colors:["#FFA600","#007AFE","#FF4B7A"]},n={tooltip:{trigger:"axis",axisPointer:{type:"none"},borderWidth:0,padding:0,backgroundColor:"transparent",formatter:o=>{let t="";return o.forEach(s=>{t+=`
+          <div class=${a.item}>
+            <span class=${a.dot} style="background-color: ${s.color}"></span>
+            <span class=${a.name}>${s.seriesName}</span>
+            <span class=${a.value}>${s.data>=1e4?(s.data/1e4).toFixed(2)+"w":s.data}</span>
+          </div>
+          `}),`
+                    <div class=${a.tooTip}>
+                      <span class=${a.month}>${o[0].dataIndex+1}月</span>
+                      <div class=${a.list}>
+                        ${t}
+                      </div>
+                    </div>
+                  `}},legend:{right:"2%",top:"0%",itemWidth:15,itemHeight:6,align:"auto",icon:"rect",itemGap:15,textStyle:{color:"#ebebf0"}},grid:{top:"20%",left:"40",right:"4%",bottom:"15%"},xAxis:[{name:"(月份)",type:"category",boundaryGap:!1,axisLine:{show:!0,lineStyle:{color:"#233653"}},axisLabel:{color:"#7ec7ff",padding:0,fontSize:12,formatter:function(o){return o}},splitLine:{show:!1,lineStyle:{color:"#192a44"}},axisTick:{show:!1},data:e.columns}],yAxis:{name:"(人数)",nameTextStyle:{color:"#D6DFEA",fontSize:12,padding:[0,30,0,0]},minInterval:1,splitNumber:5,splitLine:{show:!1,lineStyle:{color:"#192a44"}},axisLine:{show:!0,lineStyle:{color:"#233653"}},axisLabel:{show:!0,color:"#B9D6D6",padding:0,formatter:o=>(Number(o)>=1e4&&(o=Number(o)/1e4+"w"),o)},axisTick:{show:!1}},series:e.data.map((o,t)=>({name:o.label,type:"line",symbol:"circle",showSymbol:!1,smooth:!0,lineStyle:{width:1,color:e.colors[t],borderColor:e.colors[t]},itemStyle:{color:e.colors[t],borderColor:"#646ace",borderWidth:2},tooltip:{show:!0},areaStyle:{color:{type:"linear",x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:e.colors[t]},{offset:1,color:r[t]}],global:!1},shadowColor:"rgba(25,163,223, 0.3)",shadowBlur:20},data:o.value}))},[i]=c(n,e);return d("div",{ref:i,style:{width:"100%",height:"100%"}})};export{_ as A};
